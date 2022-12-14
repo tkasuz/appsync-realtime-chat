@@ -1,0 +1,69 @@
+type Message {
+    id: ID!
+    body: String!
+    from: User!
+    createdAt: AWSDateTime
+}
+
+type User {
+    id: ID!
+    name: String!
+    profilePicture: String
+    createdAt: AWSDateTime
+}
+
+type Chat {
+    id: ID!
+    name: String!
+    members: Members
+    messages: Messages
+    createdAt: AWSDateTime
+}
+
+type Members {
+  items: [User]
+  nextToken: String
+}
+
+type Messages {
+  items: [Message]
+  nextToken: String
+}
+
+input SendMessageInput {
+  body: String!
+  toChatId: ID!
+}
+
+input CreateChatInput {
+  name: String
+}
+
+input InviteMembersInput {
+  chatId: ID!
+  members: [ID!]!
+}
+
+input UpdateUserInput {
+  name: String
+  profilePicture: String 
+}
+
+type Mutation {
+  sendMessage(input: SendMessageInput!): Message
+  createChat(input: CreateChatInput!): Chat
+  inviteMembers(input: InviteMembersInput!): Members
+  updateUser(input: UpdateUserInput!): User
+}
+
+input OnSendMessageFilter {
+  chatId: ID!
+}
+
+type Subscription {
+  onSendMessage(input: OnSendMessageFilter!): Message @aws_subscribe(mutations: ["sendMessage"])
+}
+
+type Query {
+  getChat(chatId: ID!): Chat
+}
