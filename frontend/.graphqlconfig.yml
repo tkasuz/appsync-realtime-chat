@@ -14,6 +14,16 @@ projects:
         apiId: null
         frontend: javascript
         framework: react
+  backend:
+    schemaPath: ./schema.graphql
+    includes:
+      - src/graphql/**/*.ts
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: ./../backend/lib/resolvers/functions/API.ts
 extensions:
   amplify:
     version: 3

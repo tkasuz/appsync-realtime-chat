@@ -3,7 +3,7 @@ import {readFile} from 'fs/promises';
 import {CreateChatMutationVariables} from '../../../../../frontend/src/API';
 const appsync = new AppSync({region: 'us-east-1'});
 import path = require('path');
-const file = '../../../../lib/resolvers/Mutation/createChat/chat.js';
+const file = '../../../../lib/resolvers/functions/build/Mutation/createChat/chat.js';
 
 test('validate an create chat request', async () => {
   const name = 'test'

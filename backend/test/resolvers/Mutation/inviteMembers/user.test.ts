@@ -2,7 +2,7 @@ import {AppSync} from 'aws-sdk'
 import {readFile} from 'fs/promises';
 const appsync = new AppSync({region: 'us-east-1'});
 import path = require('path');
-const file = '../../../../lib/resolvers/Mutation/inviteMembers/user.js';
+const file = '../../../../lib/resolvers/functions/build/Mutation/inviteMembers/user.js';
 
 test('validate an invite member request', async () => {
   const context = JSON.stringify({

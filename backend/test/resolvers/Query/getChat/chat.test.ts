@@ -3,7 +3,7 @@ import {readFile} from 'fs/promises';
 import {GetChatQueryVariables} from '../../../../../frontend/src/API';
 const appsync = new AppSync({region: 'us-east-1'});
 import path = require('path');
-const file = '../../../../lib/resolvers/Query/getChat/chat.js';
+const file = '../../../../lib/resolvers/functions/build/Query/getChat/chat.js';
 
 test('validate an update user request', async () => {
   const context = JSON.stringify({

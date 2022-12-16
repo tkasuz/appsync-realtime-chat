@@ -2,7 +2,7 @@ import {AppSync} from 'aws-sdk'
 import {readFile} from 'fs/promises';
 const appsync = new AppSync({region: 'us-east-1'});
 import path = require('path');
-const file = '../../../../lib/resolvers/Chat/messages/messages.js';
+const file = '../../../../lib/resolvers/functions/build/Chat/messages/messages.js';
 
 test('validate Chat messages resolver', async () => {
   const context = JSON.stringify({
