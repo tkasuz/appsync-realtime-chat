@@ -3,7 +3,7 @@ import {readFile} from 'fs/promises';
 import {OnSendMessageSubscriptionVariables} from '../../../../../frontend/src/API';
 const appsync = new AppSync({region: 'us-east-1'});
 import path = require('path');
-const file = '../../../../lib/resolvers/Subscription/onSendMessage/filter.js';
+const file = '../../../../lib/resolvers/functions/build/Subscription/onSendMessage/filter.js';
 
 test('validate an onSendMessage subscription filter', async () => {
   const context = JSON.stringify({

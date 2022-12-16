@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ES2020",
+    "lib": [
+      "es2020"
+    ],
+    "rootDir": "./",
+    "outDir": "build",
+    "skipLibCheck": false,
+    "declaration": false,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": false,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "typeRoots": [
+      "./../../../node_modules/@types"
+    ],
+    "moduleResolution": "Node"
+  },
+  "include": [
+    "./**/*",
+  ],
+  "exclude": [
+    "build",
+    "API.ts"
+  ]
+}

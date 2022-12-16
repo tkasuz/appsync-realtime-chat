@@ -4,14 +4,14 @@ import {CfnDataSource, CfnGraphQLApi, CfnGraphQLSchema} from 'aws-cdk-lib/aws-ap
 import {AttributeType, BillingMode, Table} from 'aws-cdk-lib/aws-dynamodb';
 import { Asset } from 'aws-cdk-lib/aws-s3-assets';
 import path = require('path');
-import { CreateChatResolver } from './resolvers/Mutation/createChat/resolverStack';
-import { ChatMembersResolver } from './resolvers/Chat/members/resolverStack';
-import { ChatMessageResolver } from './resolvers/Chat/messages/resolverStack';
-import { SendMessageResolver } from './resolvers/Mutation/sendMessage/resolverStack';
-import { GetChatResolver } from './resolvers/Query/getChat/resolverStack';
-import { OnSendMessageResolver } from './resolvers/Subscription/onSendMessage/resolverStack';
-import { InviteMembersResolver } from './resolvers/Mutation/inviteMembers/resolverStack';
-import { UpdateUserResolver } from './resolvers/Mutation/updateUser/resolverStack';
+import { CreateChatResolver } from './resolvers/stack/Mutation/createChat';
+import { ChatMembersResolver } from './resolvers/stack/Chat/members';
+import { MessageFromResolver } from './resolvers/stack/Message/from';
+import { SendMessageResolver } from './resolvers/stack/Mutation/sendMessage';
+import { GetChatResolver } from './resolvers/stack/Query/getChat';
+import { OnSendMessageResolver } from './resolvers/stack/Subscription/onSendMessage';
+import { InviteMembersResolver } from './resolvers/stack/Mutation/inviteMembers';
+import { UpdateUserResolver } from './resolvers/stack/Mutation/updateUser';
 import { ManagedPolicy, Role, ServicePrincipal } from 'aws-cdk-lib/aws-iam';
 
 export class BackendStack extends cdk.Stack {
@@ -78,7 +78,7 @@ export class BackendStack extends cdk.Stack {
       graphqlApi: graphqlApi,
       datasource: chatDataSource
     })
-    new ChatMessageResolver(this, 'graphqlResolver-Chat.messages', {
+    new MessageFromResolver(this, 'graphqlResolver-Message.from', {
       graphqlApi: graphqlApi,
       datasource: chatDataSource
     })

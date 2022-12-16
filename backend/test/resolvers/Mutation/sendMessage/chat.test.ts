@@ -3,7 +3,7 @@ import {readFile} from 'fs/promises';
 import {SendMessageMutationVariables} from '../../../../../frontend/src/API';
 const appsync = new AppSync({region: 'us-east-1'});
 import path = require('path');
-const file = '../../../../lib/resolvers/Mutation/sendMessage/chat.js';
+const file = '../../../../lib/resolvers/functions/build/Mutation/sendMessage/chat.js';
 
 test('validate an invite member request', async () => {
   const context = JSON.stringify({

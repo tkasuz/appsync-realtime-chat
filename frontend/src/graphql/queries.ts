@@ -28,34 +28,3 @@ export const getChat = /* GraphQL */ `
     }
   }
 `;
-export const listMembers = /* GraphQL */ `
-  query ListMembers($chatId: ID!, $nextToken: String) {
-    listMembers(chatId: $chatId, nextToken: $nextToken) {
-      items {
-        id
-        name
-        profilePicture
-        createdAt
-      }
-      nextToken
-    }
-  }
-`;
-export const listMessages = /* GraphQL */ `
-  query ListMessages($chatId: ID!, $nextToken: String) {
-    listMessages(chatId: $chatId, nextToken: $nextToken) {
-      items {
-        id
-        body
-        from {
-          id
-          name
-          profilePicture
-          createdAt
-        }
-        createdAt
-      }
-      nextToken
-    }
-  }
-`;
