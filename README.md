@@ -1,12 +1,12 @@
 # AppSync realtime chat app
 
-Super sclable GraphQL chat app with AppSync JavaScript resolver and DynamoDB designed with a single table.
+Super scalable GraphQL chat app with AppSync JavaScript resolver and DynamoDB designed with a single table.
 
 ## Tech Stack
 
 | Module                 | Tech                      |
 |------------------------|---------------------------|
-| AppSync Resolver       | JavaScript                |
+| GraphQL Resolver       | JavaScript Resolver                |
 | IaC                    | CDK                       |
 | GraphQL Code Generation| Amplify CLI               |
 | Datasource             | Amazon DynamoDB           |
